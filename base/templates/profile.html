@@ -1,0 +1,523 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800,900");
+
+  html {
+    box-sizing: border-box;
+  }
+
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  article,
+  header,
+  section,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  main,
+  nav,
+  section,
+  summary {
+    display: block;
+  }
+
+  body {
+    color: #222;
+    font-size: 100%;
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+    font-family: "Raleway", sans-serif;
+  }
+
+  a {
+    font-family: "Raleway", sans-serif;
+    text-decoration: none;
+    outline: none;
+  }
+
+  a:hover,
+  a:focus {
+    color: #373e18;
+  }
+
+  section {
+    float: left;
+    width: 100%;
+    padding-bottom: 3em;
+  }
+
+  h2 {
+    color: #1a0e0e;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+
+  h2 span {
+    display: block;
+    padding: 0;
+    font-size: 18px;
+    opacity: 0.7;
+    margin-top: 5px;
+    text-transform: uppercase;
+  }
+
+  #float-right {
+    float: right;
+  }
+
+  /* ******************************************************
+	Script Top
+*********************************************************/
+
+  .ScriptTop {
+    background: #fff none repeat scroll 0 0;
+    float: left;
+    font-size: 0.69em;
+    font-weight: 600;
+    line-height: 2.2;
+    padding: 12px 0;
+    text-transform: uppercase;
+    width: 100%;
+  }
+
+  /* To Navigation Style 1*/
+  .ScriptTop ul {
+    margin: 24px 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  .ScriptTop li {
+    list-style: none;
+    display: inline-block;
+  }
+
+  .ScriptTop li a {
+    background: #6a4aed none repeat scroll 0 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 5px 18px;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+
+  .ScriptTop li a:hover {
+    background: #000;
+    color: #fff;
+  }
+
+  /* ******************************************************
+	Script Header
+*********************************************************/
+
+  .ScriptHeader {
+    float: left;
+    width: 100%;
+    padding: 2em 0;
+  }
+
+  .rt-heading {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .Scriptcontent {
+    line-height: 28px;
+  }
+
+  .ScriptHeader h1 {
+    font-family: "brandon-grotesque", "Brandon Grotesque", "Source Sans Pro",
+      "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue",
+      Arial, sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #6a4aed;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+    line-height: normal;
+  }
+
+  .ScriptHeader h2 {
+    color: #312c8f;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0 0;
+    line-height: normal;
+  }
+
+  .ScriptHeader h1 span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+  }
+
+  .ScriptHeader span {
+    display: block;
+    padding: 0;
+    font-size: 22px;
+    opacity: 0.7;
+    margin-top: 5px;
+  }
+
+  /* ******************************************************
+	Live Demo
+*********************************************************/
+
+  /* ******************************************************
+	Responsive Grids
+*********************************************************/
+
+  .rt-container {
+    margin: 0 auto;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .rt-row:before,
+  .rt-row:after {
+    display: table;
+    line-height: 0;
+    content: "";
+  }
+
+  .rt-row:after {
+    clear: both;
+  }
+
+  [class^="col-rt-"] {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    padding: 0 15px;
+    min-height: 1px;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .rt-container {
+      width: 750px;
+    }
+
+    [class^="col-rt-"] {
+      float: left;
+      width: 49.9999999999%;
+    }
+
+    .col-rt-6,
+    .col-rt-12 {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .rt-container {
+      width: 1170px;
+    }
+
+    .col-rt-1 {
+      width: 16.6%;
+    }
+
+    .col-rt-2 {
+      width: 30.33%;
+    }
+
+    .col-rt-3 {
+      width: 50%;
+    }
+
+    .col-rt-4 {
+      width: 67.664%;
+    }
+
+    .col-rt-5 {
+      width: 83.33%;
+    }
+  }
+
+  @media only screen and (min-width: 240px) and (max-width: 768px) {
+
+    .ScriptTop h1,
+    .ScriptTop ul {
+      text-align: center;
+    }
+
+    .ScriptTop h1 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .ScriptTop ul {
+      margin-top: 12px;
+    }
+
+    .ScriptHeader h1,
+    .ScriptHeader h2,
+    .scriptnav ul {
+      text-align: center;
+    }
+
+    .scriptnav ul {
+      margin-top: 12px;
+    }
+
+    #float-right {
+      float: none;
+    }
+  }
+</style>
+{% load static %}
+{% block title %} Employee Profile {% endblock %}
+
+{% block start %}
+
+<div id="wrapper">
+  <!-- Sidebar -->
+  <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'dashboard' %}">
+      <div class="sidebar-brand-icon">
+        <img src="">
+      </div>
+      <div class="sidebar-brand-text mx-4">Inductus</div>
+    </a>
+    <hr class="sidebar-divider my-0">
+    <li class="nav-item active">
+      <a class="nav-link" href="{% url 'dashboard' %}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Dashboard</span></a>
+    </li>
+    <hr class="sidebar-divider">
+
+    <li class="nav-item">
+      </a>
+
+    </li>
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
+        aria-controls="collapseForm">
+        <i class="fab fa-fw fa-wpforms"></i>
+        <span>Trip Plan</span>
+      </a>
+      <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+        <div class="bg-white py-2 collapse-inner rounded">
+          <a class="collapse-item" href="{% url 'advancetravelplan' %}">Advanced Trip Plan</a>
+          <a class="collapse-item" href="{% url 'actualTripplan' %}">Actual Trip Plan</a>
+        </div>
+      </div>
+    </li>
+    
+    <li class="nav-item">
+    </li>
+    <hr class="sidebar-divider">
+    <div class="version" id="version-ruangadmin"></div>
+  </ul>
+  <!-- Sidebar -->
+  <div id="content-wrapper" class="d-flex flex-column">
+    <div id="content">
+      <!-- TopBar -->
+      <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+        <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+          
+          <i class="fa fa-bars" ></i>
+        </button>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <img class="img-profile rounded-circle" src="{{employee.profile_pic.url}}" style="max-width: 60px">
+              <span class="ml-2 d-none d-lg-inline text-white small">{{employee.fu}}</span>
+            </a>
+
+          </li>
+          <button class="btn btn-primary" style="margin: auto auto;">
+            <a href="{% url 'logout' %}" style="text-decoration: none; color: white;">Logout</a>
+          </button>
+        </ul>
+      </nav>
+      <!-- Topbar -->
+
+      <!-- Container Fluid-->
+      <div class="container-fluid" id="container-wrapper">
+
+        {% if messages %}
+
+        {% for message in messages %}
+        {% if message.tags == "success" %}
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{message}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %}
+        {% if message.tags == "error" %}
+
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          {{message}}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        {% endif %}
+
+        <section>
+          <div class="rt-container">
+            <div class="col-rt-12">
+              <div class="Scriptcontent">
+                <!-- Student Profile -->
+                <div class="student-profile py-4">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <div class="card shadow-sm">
+                          <div class="card-header bg-transparent text-center">
+                            <img style="max-width: 100%; border-radius: 15px; height: 100%;" class="profile_img"
+                              src="{{employee.profile_pic.url}}" alt="student dp" />
+                            <h5>{{employee.full_name}}</h5>
+                          </div>
+                          <div class="card-body">
+                            <p class="mb-0">
+                              <strong class="pr-2">Email :</strong>{{employee.email}}
+                            </p>
+                            <!-- <p class="mb-0"><strong class="pr-1">Class:</strong>4</p>
+                            <p class="mb-0"><strong class="pr-1">Section:</strong>A</p> -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="card shadow-sm">
+                          <div class="card-header bg-transparent border-0">
+                            <h3 class="mb-0">
+                              General Information
+                            </h3>
+                          </div>
+                          <div class="card-body pt-0">
+                            <table class="table table-bordered">
+                              <tr>
+                                <th width="30%">Contract No.</th>
+                                <td width="2%">:</td>
+                                <td>{{employee.contract_no}}</td>
+                              </tr>
+                              <tr>
+                                <th width="30%">Contract Start </th>
+                                <td width="2%">:</td>
+                                <td>{{employee.contract_start_date}}</td>
+                              </tr>
+                              <tr>
+                                <th width="30%">Contract End</th>
+                                <td width="2%">:</td>
+                                <td>{{employee.contract_end_date}}</td>
+                              </tr>
+                              <tr>
+                                <th width="30%">State</th>
+                                <td width="2%">:</td>
+                                <td>{{employee.state}}</td>
+                              </tr>
+                              <tr>
+                                <th width="30%">Mobile</th>
+                                <td width="2%">:</td>
+                                <td>+91 {{employee.phone_number}}</td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
+                        <div style="height: 36px"></div>
+                        <button type="submit" class="btn btn-primary" data-toggle="modal"
+                          data-target="#exampleModal">Change Password</button>
+                        <!-- Button trigger modal -->
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                          aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Change Password</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <form method="POST" action="{% url 'changePassword' %}">
+                                  {% csrf_token %}
+                                  <div class="form-group">
+                                    <label for="">Current Password</label>
+                                    <input type="password" class="form-control" name="current_password"
+                                      id="current_password" aria-describedby="emailHelp" placeholder="Enter password">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="">New Password</label>
+                                    <input type="password" class="form-control" name="new_password1" id="new_password1"
+                                      placeholder="Password">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="">Confirm New Password</label>
+                                    <input type="password" class="form-control" name="new_password2" id="new_password2"
+                                      placeholder="Password">
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                  </div>
+                                </form>
+
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
+
+
+
+        <!---Container Fluid-->
+      </div>
+      <!-- Footer -->
+      <br>
+      
+      <!-- Footer -->
+    </div>
+  </div>
+
+
+  {% endblock %}
